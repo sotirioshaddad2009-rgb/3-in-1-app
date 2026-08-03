@@ -13,7 +13,35 @@ self.addEventListener('activate', (event) => {
   self.clients.claim()
 })
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener('push', (event) => {
+  let data = { title: '3in1', body: 'New alert' }
+  try {
+    data = event.data.json()
+  } catch {
+    // fallback to default
+  }
+  event.waitUntil(
+    self.registration.showNotification(data.title, {
+      body: data.body,
+      icon: './favicon.svg',
+      badge: './favicon.svg',
+      vibrate: [200, 100, 200, 100, 200, 100, 200],
+      requireInteraction: true,
+      tag: 'emergency-alert',
+    })
+  )
+})
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close()
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window' }).then((clientsArr) => {
+      const client = clientsArr.find((c) => 'focus' in c)
+      if (client) return client.focus()
+      return self.clients.openWindow('./')
+    })
+  )
+})
   if (event.request.method !== 'GET') return
   event.respondWith(
     caches.match(event.request).then((cached) => {
