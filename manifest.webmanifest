@@ -1,6 +1,6 @@
 {
-  "name": "3in1",
-  "short_name": "3in1",
+  "name": "Haven",
+  "short_name": "Haven",
   "description": "Expenses, medication reminders, and community support in one app",
   "start_url": "./",
   "scope": "./",
