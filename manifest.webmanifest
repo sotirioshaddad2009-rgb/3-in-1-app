@@ -1,0 +1,16 @@
+{
+  "name": "3in1",
+  "short_name": "3in1",
+  "description": "Expenses, medication reminders, and community support in one app",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F3F5F5",
+  "theme_color": "#0F6E63",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    { "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}
