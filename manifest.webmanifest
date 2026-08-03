@@ -1,6 +1,6 @@
 {
-  "name": "Haven",
-  "short_name": "Haven",
+  "name": "Anchor",
+  "short_name": "Anchor",
   "description": "Expenses, medication reminders, and community support in one app",
   "start_url": "./",
   "scope": "./",
